@@ -30,17 +30,26 @@ result_prep <- function(output){
 # List of regression output
 
 output_list <- list(positivity_model_1,
+                    positivity_model_2,
                     overdue_model_1,
+                    overdue_model_2,
                     lostfu_model_1,
-                    wait_model_1)
+                    lostfu_model_2,
+                    wait_model_1,
+                    wait_model_2)
 
 result_tables <- lapply(output_list, result_prep)
 
 # Give model names to result list elements 
         # NB: must be in same order as output_list
 names(result_tables) <- c(deparse(substitute(positivity_model_1)),
+                          deparse(substitute(positivity_model_2)),
                           deparse(substitute(overdue_model_1)),
+                          deparse(substitute(overdue_model_2)),
                           deparse(substitute(lostfu_model_1)),
-                          deparse(substitute(wait_model_1))
+                          deparse(substitute(lostfu_model_2)),
+                          deparse(substitute(wait_model_1)),
+                          deparse(substitute(wait_model_2))
                           )
 
+result_tables %>% write.csv("./output/regression_results_1.csv")

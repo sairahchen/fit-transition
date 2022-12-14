@@ -1,4 +1,6 @@
 library(tidyverse)
+library(magrittr)
 library(ggplot2)
 library(gtsummary)
 library(flextable)
+library(gridExtra)
